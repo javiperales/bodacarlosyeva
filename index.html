@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carlos & Eva — 14 de Junio, 2025</title>
+  <title>Carlos & Eva — 11 de Julio, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
@@ -30,6 +30,15 @@
       overflow-x: hidden;
     }
 
+    .fotoCarlos{
+      height: 150px;
+      width: 160px;
+    }
+
+    .fotoEva{
+      height: 150px;
+      width: 160px;
+    }
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -55,6 +64,14 @@
     nav a:hover { color: var(--gold); }
 
     /* ── HERO ── */
+    .fotoJuntos{
+      background-image: url("media/fotoFondo.png");
+      background-position: 100px;
+     background-repeat: no-repeat;
+/*      background-position: center;
+      background-size: 100%;
+      */
+    }
     #hero {
       min-height: 100vh;
       display: flex;
@@ -616,6 +633,7 @@
       line-height: 1.7;
     }
 
+  
     /* ── FOOTER ── */
     footer {
       background: var(--deep);
@@ -644,6 +662,7 @@
       font-size: 0.78rem;
       line-height: 1.8;
     }
+    
 
     /* ── RESPONSIVE ── */
     @media (max-width: 650px) {
@@ -673,17 +692,19 @@
   </nav>
 
   <!-- HERO -->
+   <div class="fotoJuntos">
+
+   
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="petals" id="petals"></div>
-
     <div class="hero-ornament">nos casamos</div>
     <div class="hero-names">
       Carlos
       <span>&amp;</span>
       Eva
     </div>
-    <div class="hero-date">Sábado · 14 de Junio de 2025 · Sevilla</div>
+    <div class="hero-date">Sábado · 11 de Julio de 2026 · Zaragoza</div>
     <div class="hero-divider"></div>
     <div class="hero-sub">Con amor, os esperamos en este día tan especial</div>
 
@@ -711,7 +732,7 @@
       <div class="scroll-line"></div>
     </div>
   </section>
-
+</div>
   <!-- NOSOTROS -->
   <section id="nosotros">
     <div class="section-inner">
@@ -726,22 +747,18 @@
       <div class="couple-grid">
         <div class="person">
           <div class="person-avatar">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-            </svg>
+           <img  class ="fotoCarlos" src="media/carlos1.jpg"  alt="">
           </div>
           <div class="person-name">Carlos</div>
-          <div class="person-desc">Romántico empedernido,<br>amante de los amaneceres<br>y del buen café</div>
+          <div class="person-desc">Romántico empedernido,<br>amante de los warhammer<br>y del Real Zaragoza</div>
         </div>
         <div class="ampersand">&amp;</div>
         <div class="person">
-          <div class="person-avatar">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-            </svg>
-          </div>
+            <div class="person-avatar">
+                <img  class ="fotoEva" src="media/eva.jpg"  alt="">
+            </div>
           <div class="person-name">Eva</div>
-          <div class="person-desc">Soñadora y apasionada,<br>devota de los viajes<br>y de la buena música</div>
+          <div class="person-desc">Crossfitera en apuros,<br>amante de la siesta<br>y del buen café</div>
         </div>
       </div>
     </div>
@@ -753,49 +770,62 @@
       <div class="section-tag">el gran día</div>
       <h2 class="section-title">Programa</h2>
       <div class="section-divider"></div>
-      <p class="section-text">Os esperamos para celebrar juntos cada momento de este día tan especial.</p>
+      <p class="section-text">Os esperamos para celebrar este día tan especial.</p>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="tl-time">12:00 h</div>
+       <!-- <div class="timeline-item">
+          <div class="tl-time">10/07/2026 13:00 h</div>
           <div class="tl-dot"></div>
           <div class="tl-content">
             <div class="tl-title">Ceremonia Civil</div>
-            <div class="tl-desc">Ayuntamiento de Sevilla</div>
+            <div class="tl-desc">Ayuntamiento de Zaragoza</div>
+          </div>
+        </div> -->
+          <div class="timeline-item">
+          <div class="tl-time">12:30 h</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Tansporte a la finca</div>
+            <div class="tl-desc">Un transporte acudira.....</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">13:00 h</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-title">Recepcion de los novios</div>
           </div>
         </div>
         <div class="timeline-item">
           <div class="tl-time">13:30 h</div>
           <div class="tl-dot"></div>
           <div class="tl-content">
-            <div class="tl-title">Aperitivo</div>
-            <div class="tl-desc">Jardines de la Finca · Recepción de invitados</div>
+            <div class="tl-title">Apetivo y Desgustacion del menu </div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">15:00 h</div>
+          <div class="tl-time">17:30 h</div>
           <div class="tl-dot"></div>
           <div class="tl-content">
-            <div class="tl-title">Banquete</div>
-            <div class="tl-desc">Menú degustación · Salón Principal</div>
+            <div class="tl-title">Juegos y poolparty</div>
+            <div class="tl-desc">¡El momento más divertido!</div>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="tl-time">18:30 h</div>
+          <div class="tl-time">21:30 h</div>
           <div class="tl-dot"></div>
           <div class="tl-content">
-            <div class="tl-title">Corte de la tarta</div>
-            <div class="tl-desc">¡El momento más dulce!</div>
+            <div class="tl-title">Cena y DJ</div>
+            <div class="tl-desc">¡Recuperacion y a seguir con la fiesta!</div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="tl-time">19:00 h</div>
-          <div class="tl-dot"></div>
-          <div class="tl-content">
-            <div class="tl-title">Baile &amp; Fiesta</div>
-            <div class="tl-desc">¡Hasta que el cuerpo aguante!</div>
-          </div>
-        </div>
       </div>
+                <div class="timeline-item">
+            <div class="tl-time">00:00 h</div>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-title">Vuelta a casa</div>
+              <div class="tl-desc">¡A descansar y curar la resaca!</div>
+            </div>
+          </div>
     </div>
   </section>
 
@@ -805,24 +835,17 @@
       <div class="section-tag">dónde encontrarnos</div>
       <h2 class="section-title">El Lugar</h2>
       <div class="section-divider"></div>
-      <p class="section-text">Dos espacios únicos para una jornada inolvidable en el corazón de Sevilla.</p>
-      <div class="venue-cards">
-        <div class="venue-card">
-          <div class="venue-icon">⛪</div>
-          <div class="venue-type">Ceremonia</div>
-          <div class="venue-name">Ayuntamiento de Sevilla</div>
-          <div class="venue-address">Plaza Nueva, 1<br>41001 Sevilla</div>
-          <a class="venue-link" href="https://maps.google.com/?q=Ayuntamiento+de+Sevilla" target="_blank">Ver en el mapa →</a>
-        </div>
+      <p class="section-text">Un espacios único para una jornada inolvidable</p>
         <div class="venue-card">
           <div class="venue-icon">🌿</div>
           <div class="venue-type">Celebración</div>
-          <div class="venue-name">Finca Las Flores</div>
-          <div class="venue-address">Carretera Dos Hermanas, km 5<br>41700 Dos Hermanas, Sevilla</div>
-          <a class="venue-link" href="https://maps.google.com/?q=Dos+Hermanas+Sevilla" target="_blank">Ver en el mapa →</a>
+          <div class="venue-name">Finca Miguel</div>
+          <div class="venue-address">Cam. del Convento, 38,<br>50190 Zaragoza</div>
+          <a class="venue-link" href="https://maps.app.goo.gl/vTng9QfdPSWPfMra9?g_st=ig" target="_blank">Ver en el mapa →</a>
         </div>
       </div>
     </div>
+    <iframe src="https://maps.app.goo.gl/YJUPDBVPBQWrnZGs6" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
   <!-- INFORMACIÓN PRÁCTICA -->
@@ -835,7 +858,7 @@
         <div class="info-card">
           <div class="info-icon">👗</div>
           <div class="info-title">Dress Code</div>
-          <div class="info-text">Etiqueta o cocktail. Colores suaves y naturales. ¡Os pedimos evitar el blanco!</div>
+          <div class="info-text">Fiesta ibicenca , ¡Ven con todo el blanco que puedas!</div>
         </div>
         <div class="info-card">
           <div class="info-icon">🚗</div>
@@ -843,24 +866,22 @@
           <div class="info-text">Organizamos autobús desde el centro de Sevilla. Salida a las 14:00 h desde Plaza Nueva.</div>
         </div>
         <div class="info-card">
-          <div class="info-icon">🏨</div>
-          <div class="info-title">Alojamiento</div>
-          <div class="info-text">Hemos negociado tarifas especiales en el Hotel Alfonso XIII. Menciona la boda al reservar.</div>
-        </div>
-        <div class="info-card">
           <div class="info-icon">🎁</div>
-          <div class="info-title">Lista de boda</div>
-          <div class="info-text">Si quieres hacernos un regalo, tenemos lista en El Corte Inglés. También aceptamos aportaciones para el viaje de luna de miel.</div>
+          <div class="info-title">Regalo de Boda</div>
+          <div class="info-text">Tu presencia es nuestro mejor regalo, pero si quieres ayudarnos a que nuestra cuenta bancaria no llore despues de la luna de miel.Cualquier detalle sera bienvenido
+          IBAN: ES3820800100043043816458
+
+          </div>
         </div>
         <div class="info-card">
           <div class="info-icon">🌾</div>
           <div class="info-title">Alergias</div>
-          <div class="info-text">El menú estará adaptado. Indícanos cualquier alergia o intolerancia en el formulario de confirmación.</div>
+          <div class="info-text">El menú estará adaptado. Indícanos cualquier alergia o intolerancia a este teléfono: 645541587.</div>
         </div>
         <div class="info-card">
           <div class="info-icon">📸</div>
           <div class="info-title">Fotos</div>
-          <div class="info-text">¡Os pedimos que compartáis vuestras fotos con el hashtag <strong>#CarlosyEva2025</strong>!</div>
+          <div class="info-text">¡Os pedimos que compartáis vuestras fotos con el hashtag <strong>#CarlosyEva2026</strong>!</div>
         </div>
       </div>
     </div>
@@ -872,7 +893,7 @@
       <div class="section-tag">confirmar asistencia</div>
       <h2 class="section-title">¿Venís?</h2>
       <div class="section-divider"></div>
-      <p class="section-text">Por favor, confirma tu asistencia antes del <strong>31 de Mayo de 2025</strong>. ¡Nos hará muy felices teneros allí!</p>
+      <p class="section-text">Por favor, confirma tu asistencia antes del <strong>31 de Mayo de 2026</strong>. ¡Nos hará muy felices teneros allí!</p>
 
       <div class="rsvp-wrap">
         <div id="rsvp-form-wrap">
@@ -910,8 +931,6 @@
               <select class="form-select" id="guests">
                 <option value="0">Solo/a</option>
                 <option value="1">+1 acompañante</option>
-                <option value="2">+2 acompañantes</option>
-                <option value="3">+3 acompañantes</option>
               </select>
             </div>
             <div class="form-group">
@@ -949,10 +968,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-names">Carlos &amp; Eva</div>
-    <div class="footer-date">14 · 06 · 2025 · Sevilla</div>
+    <div class="footer-date">11 · 07 · 2026 · Zaragoza</div>
     <div class="footer-text">
       Con todo nuestro amor, os esperamos en este día tan especial.<br>
-      ¿Preguntas? Escríbenos a <a href="mailto:carlosyeva2025@gmail.com" style="color:var(--gold-light); text-decoration:none;">carlosyeva2025@gmail.com</a>
+      ¿Preguntas? Escríbenos a <a href="mailto:evapv94@gmail.com" style="color:var(--gold-light); text-decoration:none;">evapv94@gmail.com</a>
     </div>
   </footer>
 
