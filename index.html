@@ -6,6 +6,7 @@
   <title>Carlos & Eva — 11 de Julio, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=file_copy" />
   <style>
     :root {
       --cream: #faf6f0;
@@ -879,9 +880,23 @@
           <div class="info-icon">🎁</div>
           <div class="info-title">Regalo de Boda</div>
           <div class="info-text">Tu presencia es nuestro mejor regalo, pero si quieres ayudarnos a que nuestra cuenta bancaria no llore despues de la luna de miel.Cualquier detalle sera bienvenido
-          IBAN: ES3820800100043043816458
-
-          </div>
+          IBAN: <span id="iban">ES3820800100043043816458</span> <span id="copy-btn" class="material-symbols-outlined">file_copy</span>
+            <script>
+              const botonCopiar = document.getElementById('copy-btn');
+              const textoIban = document.getElementById('iban');
+              botonCopiar.addEventListener('click', () => {
+              navigator.clipboard.writeText(textoIban.textContent).then(() => {
+              const originalIcon = botonCopiar.innerText;
+              botonCopiar.style.color = 'red';
+              
+              setTimeout(() => {
+              botonCopiar.innerText = originalIcon;
+              botonCopiar.style.color = ''; 
+              }, 200);
+                 });
+               });
+           </script>
+        </div>
         </div>
         <div class="info-card">
           <div class="info-icon">🌾</div>
