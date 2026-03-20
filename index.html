@@ -75,7 +75,7 @@
     /* ── HERO ── */
     .fotoJuntos{
       background-image: url("media/fotoFondo.png");
-      background-position: 100px;
+      background-position: 50%;
      background-repeat: no-repeat;
 /*      background-position: center;
       background-size: 100%;
@@ -737,7 +737,7 @@
     </div>
 
     <div class="scroll-hint">
-      <span>Descubrir</span>
+      <span></span>
       <div class="scroll-line"></div>
     </div>
   </section>
@@ -892,7 +892,7 @@
               setTimeout(() => {
               botonCopiar.innerText = originalIcon;
               botonCopiar.style.color = ''; 
-              }, 200);
+              }, 500);
                  });
                });
            </script>
@@ -922,30 +922,35 @@
 
       <div class="rsvp-wrap">
         <div id="rsvp-form-wrap">
+          <form id="my-form" action="https://formspree.io/f/xzdjwbwg" method="POST">
+            <div style="display:none;">
+              <label>No rellenes esto si eres humano:</label>
+              <input type="text" name="_gotcha">
+            </div>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Nombre</label>
-              <input class="form-input" type="text" id="name" placeholder="Tu nombre" required>
+              <input class="form-input" type="text" name="nombre" id="name" placeholder="Tu nombre" required>
             </div>
             <div class="form-group">
               <label class="form-label">Apellidos</label>
-              <input class="form-input" type="text" id="surname" placeholder="Tus apellidos">
+              <input class="form-input" type="text" name="apellidos" id="surname" placeholder="Tus apellidos">
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input class="form-input" type="email" id="email" placeholder="tu@email.com">
+            <input class="form-input" type="email" name="email" id="email" placeholder="tu@email.com">
           </div>
 
           <div class="form-group">
             <label class="form-label">Asistencia</label>
             <div class="radio-group">
               <label class="radio-label">
-                <input type="radio" name="attendance" value="si" checked> Sí, allí estaré 🎉
+                <input type="radio"  name="asistencia" value="si" checked> Sí, allí estaré 🎉
               </label>
               <label class="radio-label">
-                <input type="radio" name="attendance" value="no"> No puedo asistir
+                <input type="radio"  name="asistencia" value="no"> No puedo asistir
               </label>
             </div>
           </div>
@@ -953,14 +958,14 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Acompañantes</label>
-              <select class="form-select" id="guests">
+              <select class="form-select" name="acompañantes" id="guests">
                 <option value="0">Solo/a</option>
                 <option value="1">+1 acompañante</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label">Menú</label>
-              <select class="form-select" id="menu">
+              <select class="form-select" name="menu" id="menu">
                 <option value="normal">Estándar</option>
                 <option value="vegetariano">Vegetariano</option>
                 <option value="vegano">Vegano</option>
@@ -971,10 +976,11 @@
 
           <div class="form-group">
             <label class="form-label">Alergias o comentarios</label>
-            <textarea class="form-textarea" id="notes" placeholder="Cuéntanos cualquier cosa que debamos saber..."></textarea>
+            <textarea class="form-textarea" name="mensaje" id="notes" placeholder="Cuéntanos cualquier cosa que debamos saber..."></textarea>
           </div>
 
           <button class="btn-submit" onclick="submitRSVP()">Confirmar asistencia</button>
+          </form>
         </div>
 
         <div class="success-msg" id="success-msg">
@@ -1016,7 +1022,7 @@
     }
 
     // ── COUNTDOWN
-    const weddingDate = new Date('2025-06-14T12:00:00');
+    const weddingDate = new Date('2026-07-14T12:00:00');
     function updateCountdown() {
       const now = new Date();
       const diff = weddingDate - now;
@@ -1064,6 +1070,42 @@
       el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
       observer.observe(el);
     });
+    
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault(); 
+      var status = document.getElementById("success-msg");
+      var formWrap = document.getElementById("rsvp-form-wrap");
+      var data = new FormData(event.target);
+    
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          
+          formWrap.style.display = "none";
+          status.style.display = "block";
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              alert(data["errors"].map(error => error["message"]).join(", "));
+            } else {
+              alert("¡Huy! Hubo un problema al enviar el formulario.");
+            }
+          })
+        }
+      }).catch(error => {
+        alert("Hubo un error de conexión.");
+      });
+    }
+    
+    form.addEventListener("submit", handleSubmit);
+
   </script>
 </body>
 </html>
