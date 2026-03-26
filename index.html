@@ -40,13 +40,13 @@
       border-radius: 15%;
     }
     .fotoCarlos{
-      height: 150px;
+      margin-left: 25px;
       width: 160px;
     }
 
     .fotoEva{
-      height: 150px;
-      width: 160px;
+      height: 120px;
+      width: 120px;
     }
     /* ── NAV ── */
     nav {
@@ -157,7 +157,7 @@
     }
 
     .hero-date {
-      margin-top: 2.5rem;
+      margin-top: 5.1em;
       font-size: 0.78rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -166,14 +166,18 @@
       animation: fadeUp 1s ease 0.8s forwards;
     }
 
-    .hero-divider {
+      @media (max-width: 450px) {
+        .hero-date { margin-top: 20.1em; }
+      }
+
+  /*  .hero-divider {
       width: 80px;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
       margin: 2rem auto;
       opacity: 0;
       animation: fadeUp 1s ease 1s forwards;
-    }
+    }*/
 
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
@@ -187,7 +191,7 @@
     .countdown {
       display: flex;
       gap: 2.5rem;
-      margin-top: 3rem;
+      /*margin-top: 3rem;*/
       opacity: 0;
       animation: fadeUp 1s ease 1.3s forwards;
     }
@@ -714,7 +718,6 @@
       Eva
     </div>
     <div class="hero-date">Sábado · 11 de Julio de 2026 · Zaragoza</div>
-    <div class="hero-divider"></div>
     <div class="hero-sub">Con amor, os esperamos en este día tan especial</div>
 
     <div class="countdown" id="countdown">
